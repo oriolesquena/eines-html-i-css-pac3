@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Oriol Esquena">
+  <meta name="description" content="Lloc web creat com a exercici de la PAC1 de l'assignatura
+        Eines HTML i CSS del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Parc Natural de la Zona Volcànica de la Garrotxa.">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <!-- do not remove this line! -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/volcano.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  </style>
+  <title>Volcans i llocs d'interès</title>
+</head>
+
+<body>
+  <header class="primary-header">
+    <a class="logo" href="index.html"></a>
+    <h1 class="primary-header__title">
+      <a class="colored-background-link" href="index.html">Parc Natural de la Zona Volcànica de la Garrotxa
+      </a>
+    </h1>
+  </header>
+  <nav class="nav">
+    <ul class="nav-menu list--no-style">
+      <li>
+        <a class="colored-background-link" href="index.html">Portada</a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="historia.html">Història i formació</a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="volcans.html"><strong>Volcans i llocs d'interès</strong></a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="links.html">Enllaços</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="main">
+    <section>
+      <header class="secondary-header">
+        <h2 class="secondary-header__title">
+          <span class="fa-solid fa-circle-info"></span>
+          Introducció
+        </h2>
+      </header>
+      <p>
+        En aquesta pàgina trobem els 5 volcans, o zones volcàniques, més
+        importants de la Garrotxa, destacant el que sempre ha estat evident:
+        aquesta és una terra de bellesa àrida i incapaç de deixar-nos
+        indiferents.
+      </p>
+      <ul class="categoria-volcans">
+        <li>
+          <a class="text-link" href="sta-margarida.html">Volcà de Santa Margarida</a>
+        </li>
+        <li>
+          <a class="text-link" href="castellfollit.html">Castellfollit de la Roca</a>
+        </li>
+        <li>
+          <a class="text-link" href="">Volcà Croscat</a>
+        </li>
+        <li>
+          <a class="text-link" href="">Volcà Montsacopa</a>
+        </li>
+        <li>
+          <a class="text-link" href="">La Fageda d'en Jordà</a>
+        </li>
+      </ul>
+      <p>
+        Fent clic sobre aquests llocs us portarà a una pàgina amb una
+        explicació detallada de cada lloc.
+      </p>
+    </section>
+    <section>
+      <header class="secondary-header">
+        <h2 class="secondary-header__title">
+          <span class="fa-solid fa-images"></span>
+          Galeria d'imatges dels llocs
+        </h2>
+      </header>
+      <div class="img-galeria">
+        <figure class="img-galeria__figure">
+          <a class="img-galeria__link" href="sta-margarida.html">
+            <img srcset="
+                    ././img/sta-margarida-1200px.jpg?as=webp&width=500 500w
+                  " sizes="500px" src="./img/sta-margarida-1200px.jpg?width=500" alt="Volcà Santa Margarida"
+              class="img-galeria__element">
+            <p class="img-galeria__caption">
+              Volcà de Santa Margarida
+            </p>
+          </a>
+        </figure>
+        <figure class="img-galeria__figure">
+          <a class="img-galeria__link" href="castellfollit.html">
+            <img srcset="./img/castellfollit-1200px.jpg?as=webp&width=500 500w" sizes="500px"
+              src="./img/castellfollit-1200px.jpg?width=500" alt="Castellfollit de la Roca"
+              class="img-galeria__element">
+            <p class="img-galeria__caption">
+              Castellfollit de la Roca
+            </p>
+          </a>
+        </figure>
+        <figure class="img-galeria__figure">
+          <a class="img-galeria__link" href="">
+            <img srcset="././img/croscat2-1200px.jpg?as=webp&width=500 500w" sizes="500px"
+              src="./img/croscat2-1200px.jpg?width=500" alt="Volcà Croscat" class="img-galeria__element">
+            <p class="img-galeria__caption">
+              Volcà Croscat
+            </p>
+          </a>
+        </figure>
+        <figure class="img-galeria__figure">
+          <a class="img-galeria__link" href="">
+            <img srcset="././img/montsacopa-1200px.jpg?as=webp&width=500 500w" sizes="500px"
+              src="./img/montsacopa-1200px.jpg?width=500" alt="Volcà Montsacopa" class="img-galeria__element">
+            <p class="img-galeria__caption">
+              Volcà Montsacopa
+            </p>
+          </a>
+        </figure>
+        <figure class="img-galeria__figure">
+          <a class="img-galeria__link" href="">
+            <img srcset="././img/fageda-1200px.jpg?as=webp&width=500 500w" sizes="500px"
+              src="./img/fageda-1200px.jpg?width=500" alt="La Fageda d'en Jordà" class="img-galeria__element">
+            <p class="img-galeria__caption">
+              La Fageda d'en Jordà
+            </p>
+          </a>
+        </figure>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer--logo"></div>
+    <nav class="footer--nav">
+      <ul class="nav-menu list--no-style">
+        <li>
+          <a class="colored-background-link" href="index.html">Portada</a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="historia.html">Història i formació</a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="volcans.html"><strong>Volcans i llocs d'interès</strong></a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="links.html">Enllaços</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="footer--xarxes-socials">
+      <a class="colored-background-link" href="https://instagram.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-instagram"></span></a>
+      <a class="colored-background-link" href="https://twitter.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-twitter"></span></a>
+      <a class="colored-background-link" href="https://facebook.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-facebook"></span></a>
+    </div>
+  </footer>
+  <!-- script type="module" src="./app.js"></!-->
+  <!-- do not remove this line! -->
+</body>
+
+</html>

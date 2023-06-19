@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+
+<html lang="ca">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Oriol Esquena">
+  <meta name="description" content="Lloc web creat com a exercici de la PAC1 de l'assignatura
+        Eines HTML i CSS del màster Desenvolupament de Llocs i Aplicacions Web de la UOC. 
+        S'hi troba informació sobre el Parc Natural de la Zona Volcànica de la Garrotxa.">
+  <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <!-- do not remove this line! -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/volcano.png">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  </style>
+  <title>Parc Natural de la Zona Volcànica de la Garrotxa</title>
+</head>
+
+<body>
+  <header class="primary-header">
+    <a class="logo" href="index.html"></a>
+    <h1 class="primary-header__title">
+      <a class="colored-background-link" href="index.html">Parc Natural de la Zona Volcànica de la Garrotxa
+      </a>
+    </h1>
+  </header>
+  <nav class="nav">
+    <ul class="nav-menu list--no-style">
+      <li>
+        <a class="colored-background-link" href="index.html"><strong>Portada</strong></a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="historia.html">Història i formació</a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="volcans.html">Volcans i llocs d'interès</a>
+      </li>
+      <li>
+        <a class="colored-background-link" href="links.html">Enllaços</a>
+      </li>
+    </ul>
+  </nav>
+  <main class="main">
+    <article>
+      <header class="secondary-header">
+        <h2 class="secondary-header__title">
+          <span class="fa-solid fa-landmark"></span>
+          Introducció
+        </h2>
+      </header>
+      <div>
+        <p>
+          El Parc Natural de la Zona Volcànica de la Garrotxa és un parc
+          natural que es troba a la comarca de la Garrotxa i protegeix gran
+          part de la zona volcànica de la Garrotxa, el millor exponent de
+          paisatge volcànic de la península Ibèrica. Abans de ser declarat
+          parc natural el 1985, es va protegir com a Paratge Natural d'Interès
+          Nacional durant la primera legislatura de la Catalunya autonòmica.
+        </p>
+        <p>
+          El parc consta d'una quarantena de cons volcànics d'una edat
+          compresa entre els 10.000 i els 700.000 anys, 10 cràters, 23 cons
+          ben conservats i més de 20 colades de laves basàltiques.
+          L'orografia, el sòl i el clima proporcionen una variada vegetació,
+          sovint exuberant, amb alzinars, rouredes i fagedes d'excepcional
+          valor paisatgístic. Té un clima molt humit, i per algun tipus de
+          vegetació es podria representar com a clima atlàntic. El tipus
+          d'arbre que més abunda és l'alzinar muntanyenc.
+        </p>
+        <p>
+          Té una superfície protegida de 15.000 ha, que inclou 11 municipis,
+          28 reserves naturals, i pretén fer compatible la conservació amb el
+          desenvolupament econòmic, en règim de protecció arran dels impactes
+          de les extraccions mineres, el creixement urbanístic i els abocadors
+          incontrolats de residus.
+        </p>
+      </div>
+      <figure class="img-figures">
+        <picture>
+          <source type="image/webp" media="(max-width: 440px)" srcset="./img/croscat-1200px.jpg?as=webp&width=400">
+          <source type="image/webp" media="(max-width: 839px)" srcset="./img/croscat-1200px.jpg?as=webp&width=800">
+          <source type="image/webp" media="(min-width: 840px)" srcset="./img/croscat-1200px.jpg?as=webp">
+          <source type="image/jpeg" media="(max-width: 440px)" srcset="./img/croscat-1200px.jpg?width=400">
+          <source type="image/jpeg" media="(max-width: 839px)" srcset="./img/croscat-1200px.jpg?width=800">
+          <source type="image/jpeg" media="(max-width: 840px)" srcset="./img/croscat-1200px.jpg">
+          <img class="img-figures__image--clipped" src="./img/croscat-1200px.jpg" alt="El Volcà Croscat">
+        </picture>
+        <figcaption class="img-figures__captions">
+          El volcà Croscat en forma de volcà | Imatge de:
+          <a class="text-link"
+            href="https://www.catalunyapress.es/texto-diario/mostrar/3167646/pueden-erupcionar-volcanes-garrotxa"
+            title="Reserva Natural del Volcà Croscat" target="_blank">Catalunya Press</a>
+        </figcaption>
+      </figure>
+    </article>
+  </main>
+  <footer class="footer">
+    <div class="footer--logo"></div>
+    <nav class="footer--nav">
+      <ul class="nav-menu list--no-style">
+        <li>
+          <a class="colored-background-link" href="index.html"><strong>Portada</strong></a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="historia.html">Història i formació</a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="volcans.html">Volcans i llocs d'interès</a>
+        </li>
+        <li>
+          <a class="colored-background-link" href="links.html">Enllaços</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="footer--xarxes-socials">
+      <a class="colored-background-link" href="https://instagram.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-instagram"></span></a>
+      <a class="colored-background-link" href="https://twitter.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-twitter"></span></a>
+      <a class="colored-background-link" href="https://facebook.com/pnzvg" target="_blank"><span
+          class="fa-brands fa-facebook"></span></a>
+    </div>
+  </footer>
+  <!-- script type="module" src="./app.js"></!-->
+  <!-- do not remove this line! -->
+</body>
+
+</html>

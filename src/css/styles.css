@@ -1,0 +1,462 @@
+@import 'npm:@fortawesome/fontawesome-free/css/all.css';
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-size: 16px;
+  font-family: 'Work Sans', sans-serif;
+  line-height: 24px;
+  color: #351702b4;
+  background-color: #f2f4ea;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+/* Afegir la imatge del logo com a background ja que només és decorativa */
+.logo {
+  min-width: 80px;
+  min-height: 80px;
+  background: url('/src/img/logo.svg') 0 / contain no-repeat;
+  margin: auto;
+}
+
+/* Afegir animació a la imatge, fent que giri 360 graus quan 
+   passem  el ratolí per sobre */
+.logo:hover {
+  animation: rotate360 1s ease-in-out;
+}
+
+/* Creació de l'animació */
+@keyframes rotate360 {
+  0% {
+    opacity: 1;
+
+    /* Origen del gir de la imatge */
+    transform-origin: center;
+
+    /* Rotació de la imatge */
+    transform: rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform-origin: center;
+    transform: rotate(360deg);
+  }
+}
+
+/* Definició de l'estil del header principal */
+.primary-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  color: #f2f4ea;
+  background-color: #66723b;
+  text-align: left;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.primary-header__title {
+  font-family: 'Caveat Brush', sans-serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  text-transform: uppercase;
+  margin: 1rem 0.5rem;
+}
+
+/* Menú de navegació principal: Mentre que el títol
+   de la capçalera s'amaga, el menú es manté visible*/
+.nav {
+  background-color: #66723b;
+  width: 100vw;
+  margin-top: -1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #f2f4ea;
+
+  /* Fer que es mantingui visible a dalt sempre */
+  position: sticky;
+  top: 0;
+  z-index: 5;
+
+  /* Crear un difuminat per quan es llisqui avall la pàgina*/
+  border-bottom: 2px solid #f2f4ea;
+  box-shadow: 0 2px 2px 0px #f2f4ea;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  max-width: 850px;
+  justify-content: flex-start;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.2;
+  margin-top: 2rem;
+  width: 100vw;
+  color: #f2f4ea;
+  text-align: center;
+  background-color: #66723b;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Igual que el logo de la capçalera, però més petit */
+.footer--logo {
+  min-width: 50px;
+  min-height: 50px;
+  background: url('/src/img/logo.svg') 0 / contain no-repeat;
+  margin: auto;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  justify-content: center;
+}
+
+/* Definim els colors i estil dels links de la pàgina,
+   dels que tenen un fons (capçalera i peu de pàgina 
+   principalment) i dels títols en el text */
+.text-link {
+  color: #607807;
+  text-decoration: none;
+}
+.text-link:visited {
+  color: #607807;
+}
+.text-link:hover,
+.text-link:active,
+.text-link:focus {
+  color: #97b52b;
+}
+.colored-background-link {
+  color: #f2f4ea;
+  text-decoration: none;
+}
+.colored-background-link:visited {
+  color: #f2f4ea;
+}
+.colored-background-link:hover,
+.colored-background-link:active,
+.colored-background-link:focus {
+  color: #cad2ab;
+}
+
+.title-link {
+  color: #351702b4;
+  text-decoration: none;
+}
+.title-link:visited {
+  color: #351702b4;
+}
+.title-link:hover,
+.title-link:active,
+.title-link:focus {
+  color: #823f0eb4;
+}
+
+/* Definició de l'estil, mida i posició de les
+   diferents imatges i vídeos de la pàgina*/
+.img-figures {
+  margin: 0;
+  margin-bottom: 0.8rem;
+}
+
+.img-figures__image {
+  width: 100%;
+}
+
+/* Imatge tallada en forma de volcà amb clip-path */
+.img-figures__image--clipped {
+  width: 100%;
+  clip-path: polygon(
+    0% 100%,
+    28% 26%,
+    72% 26%,
+    100% 100%,
+    0 100%,
+    50% 26%,
+    32% 0,
+    68% 0
+  );
+}
+
+.img-figures__captions {
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Definició de les característiques dels vídeos embed de YouTube */
+.vid-figures {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.vid-figures__vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.vid-figures__caption {
+  height: 3.5rem;
+  position: absolute;
+  bottom: -3.7rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-style: italic;
+  line-height: 1.2;
+}
+
+/* Per les imatges de la galeria es defineix un grid */
+.img-galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-auto-rows: minmax(15vh, 200px);
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.img-galeria__figure {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.img-galeria__link {
+  text-decoration: none;
+}
+
+.img-galeria__element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.img-galeria__caption {
+  position: relative;
+  bottom: 2.9rem;
+  text-align: center;
+  background-color: rgba(50, 75, 36, 0.75);
+  color: #f2f4ea;
+}
+
+/* Definim l'estil de totes les llistes que hi ha a la pàgina */
+.list--no-style {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+/* En dispositius mòbils, no volem que es vegi el volcà animat ja que ocupa massa espai */
+.volcano-explosion {
+  display: none;
+}
+
+/* Pels dispositius mòbils molt petits, reduïm la mida del títol principal  */
+@media screen and (max-width: 350px) {
+  .primary-header__title {
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 560px) {
+  /* Modifiquem la mida de l'scroll per ajustar-lo a una capçalera més prima */
+  html {
+    scroll-padding-top: 170px;
+  }
+
+  body {
+    width: 60vw;
+    text-align: left;
+  }
+
+  /* Adaptem el logo a la mida de la capçalera */
+  .logo {
+    background-size: contain;
+    width: calc(20px + 7vw);
+    height: calc(20px + 7vw);
+    min-width: 50px;
+    min-height: 50px;
+  }
+
+  .primary-header {
+    flex-direction: row;
+    padding-left: 20vw;
+    padding-right: 20vw;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  /* Adaptem el títol a la mida de la capçalera */
+  .primary-header__title {
+    width: 75%;
+    font-size: calc(1rem + 2vw);
+    line-height: calc(1rem + 2vw);
+    text-align: left;
+    margin: auto;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* Posem el footer en fila en comptes de en columna */
+  .footer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 20vw;
+    padding-right: 20vw;
+  }
+
+  .footer--logo {
+    margin: auto 0;
+  }
+
+  .footer--nav {
+    margin: auto 0;
+  }
+
+  .footer--xarxes-socials {
+    margin: auto 0;
+  }
+
+  .footer--xarxes-socials > a:not(:first-child) {
+    margin-left: 0.3rem;
+  }
+
+  .img-figures__image {
+    width: 60vw;
+  }
+}
+
+/* La imatge decorativa de les pàgines de detall i el volcà animat
+   apareixen a partir d'aquesta mida de pantalla ja que sinó ocupen massa */
+@media screen and (min-width: 780px) {
+  .decorative-img {
+    float: left;
+    position: relative;
+    top: calc(-65px - 10vw);
+    left: calc(100px + 20vw);
+    min-width: calc(100px + 15vw);
+    min-height: calc(60px + 10vw);
+    margin: auto;
+    margin-bottom: calc(-70px - 10vw);
+    opacity: 0.7;
+  }
+
+  .castellfollit {
+    background: url('/src/img/castellfollit-cingle.svg') 0 / contain no-repeat;
+  }
+
+  .sta-margarida {
+    background: url('/src/img/sta-margarida-ermita.svg') 0 / contain no-repeat;
+  }
+
+  .volcano-explosion {
+    display: block;
+    float: right;
+    position: relative;
+    top: -5vw;
+    margin-bottom: -8.5vw;
+    width: 20vw;
+    max-width: 332px;
+    max-height: 415px;
+  }
+}
+
+/* Per pantalles grans o de PC, principalment
+   serveix per ajustar mides d'amplada */
+@media screen and (min-width: 1200px) {
+  html {
+    scroll-padding-top: 150px;
+  }
+
+  body {
+    width: 48vw;
+  }
+
+  .primary-header {
+    padding: 0.5rem 26vw;
+  }
+
+  .logo {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  .primary-header__title {
+    font-size: max(2.6rem);
+    line-height: max(2.6rem);
+  }
+
+  .footer {
+    padding-left: 27vw;
+    padding-right: 27vw;
+    gap: 50px;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    flex-flow: row wrap;
+  }
+
+  /* afegim un punt entre els elements de la llista de l'índex de navegació */
+  .nav-menu > li:not(:last-child)::after {
+    content: ' ·\00a0';
+  }
+
+  .footer--xarxes-socials {
+    min-width: 70px;
+  }
+
+  .img-figures__image {
+    width: 48vw;
+    max-width: 850px;
+  }
+
+  .decorative-img {
+    min-width: 300px;
+    min-height: 180px;
+    top: -180px;
+    left: calc(160px + 10vw);
+    margin-bottom: -180px;
+  }
+
+  /* afegim el següent codi per tal que quan passem el ratolí
+  per sobre se'ns mostri la caption de les imatges de la galeria */
+  .img-galeria__caption {
+    transition: all 300ms ease-in-out;
+    opacity: 0;
+  }
+
+  .img-galeria__figure:hover .img-galeria__caption {
+    opacity: 1;
+  }
+}
