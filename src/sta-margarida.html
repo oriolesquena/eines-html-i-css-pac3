@@ -14,7 +14,10 @@
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
-  <!-- do not remove this line! -->
+  <!-- Include the CSS & JS.. (This could be direct from the package or bundled) -->
+  <link rel="stylesheet" href="../node_modules/lite-youtube-embed/src/lite-yt-embed.css">
+  <script async src="../node_modules/lite-youtube-embed/src/lite-yt-embed.js"></script>
+
   <link rel="icon" type="image/png" sizes="32x32" href="./img/volcano.png">
   <title>Volcà Santa Margarida</title>
 </head>
@@ -188,10 +191,12 @@
         </figcaption>
       </figure>
       <figure class="vid-figures">
-        <iframe class="vid-figures__vid" width="560" height="315"
-          src="https://www.youtube.com/embed/B0VRPUcr3-w?start=5&mute=1" title="YouTube video player" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+        <lite-youtube videoid="B0VRPUcr3-w" params="start=5&mute=1"
+          style="background-image: url('https://i.ytimg.com/vi/B0VRPUcr3-w/maxresdefault.jpg'); max-width: 850px;">
+          <a class="lty-playbtn vid-figures__vid" title="Play Video">
+            <span class="lyt-visually-hidden">Volcà Santa Margarida des de l'Aire</span>
+          </a>
+        </lite-youtube>
         <figcaption class="vid-figures__caption">
           Vídeo del Volcà Santa Margarida des de l'aire | Vídeo del canal de
           YouTube:
