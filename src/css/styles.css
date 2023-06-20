@@ -184,11 +184,13 @@ body {
 
 .img-figures__image {
   width: 100%;
+  height: auto;
 }
 
 /* Imatge tallada en forma de volcà amb clip-path */
 .img-figures__image--clipped {
   width: 100%;
+  height: auto;
   clip-path: polygon(
     0% 100%,
     28% 26%,
