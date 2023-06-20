@@ -1,5 +1,17 @@
 @import 'npm:@fortawesome/fontawesome-free/css/all.css';
+/*
 @import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap');
+*/
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url(../fonts/Work_Sans/WorkSans-VariableFont_wght.woff2);
+}
+
+@font-face {
+  font-family: 'Caveat Brush';
+  src: url(../fonts/Caveat_Brush/CaveatBrush-Regular.woff2);
+}
 
 * {
   box-sizing: border-box;
