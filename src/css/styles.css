@@ -5,12 +5,26 @@
 
 @font-face {
   font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 400;
   src: url(../fonts/Work_Sans/WorkSans-Regular.woff2);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  font-style: bold;
+  font-weight: 700;
+  src: url(../fonts/Work_Sans/WorkSans-Bold.woff2);
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'Caveat Brush';
+  font-style: normal;
+  font-weight: 400;
   src: url(../fonts/Caveat_Brush/CaveatBrush-Regular.woff2);
+  font-display: swap;
 }
 
 * {
