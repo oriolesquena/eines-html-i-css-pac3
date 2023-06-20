@@ -14,6 +14,9 @@
   <link rel="preload"
     href="https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Work+Sans:ital,wght@0,400;0,700;1,400&display=swap">
   <link rel="stylesheet" type="text/css" href="./css/styles.css">
+  <!-- Include the CSS & JS.. (This could be direct from the package or bundled) -->
+  <link rel="stylesheet" href="../node_modules/lite-youtube-embed/src/lite-yt-embed.css">
+  <script async src="../node_modules/lite-youtube-embed/src/lite-yt-embed.js"></script>
   <!-- do not remove this line! -->
   <link rel="icon" type="image/png" sizes="32x32" href="./img/volcano.png">
   <title>Història del Parc Natural de la Zona Volcànica de la Garrotxa</title>
@@ -144,10 +147,12 @@
         </p>
       </div>
       <figure class="vid-figures">
-        <iframe class="vid-figures__vid" width="560" height="315" src="https://www.youtube.com/embed/n1UDv0_hjME"
-          title="YouTube video player" loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+        <lite-youtube videoid="n1UDv0_hjME"
+          style="background-image: url('https://i.ytimg.com/vi/n1UDv0_hjME/hqdefault.jpg');">
+          <a class="lty-playbtn vid-figures__vid" title="Play Video">
+            <span class="lyt-visually-hidden">Poden entrar en erupció els volcans de la Garrotxa?</span>
+          </a>
+        </lite-youtube>
         <figcaption class="vid-figures__caption">
           Vídeo explicatiu de si els volcans de la Garrotxa podrien erupcionar
           | Vídeo de:
