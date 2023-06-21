@@ -10,11 +10,7 @@ La publicació s'ha fet amb Netlify i s'ha publicat en el següent enllaç: [htt
 
 Per tal d'evitar URL molt llargues, la URL base del projecte és: [https://dainty-licorice-850b4d.netlify.app/](https://dainty-licorice-850b4d.netlify.app/). A la taula s'afegeix només el nom del fitxer HTML i l'enllaç.
 
-| **Títol** | **URL** | **Temps de càrrega (mitjà)**
-**(Mòbil/PC)** | **Pes total**
-**(Mòbil/PC)** | **Pes transferit**
-**(Mòbil/PC)** | **Quantitat de recursos**
-**(Mòbil/PC)** |
+| **Títol** | **URL** | **Temps de càrrega (mitjà) (Mòbil/PC)** | **Pes total (Mòbil/PC)** | **Pes transferit (Mòbil/PC)** | **Quantitat de recursos (Mòbil/PC)** |
 | --- | --- | --- | --- | --- | --- |
 | Portada | [/index.html](https://dainty-licorice-850b4d.netlify.app/index.html) | 6.23s / 7.71s | 680 / 863 kB | 514 / 696 kB | 12 / 12 requests |
 | Història i formació | [/historia.html](https://dainty-licorice-850b4d.netlify.app/historia.html) | 11.88s / 12.96s | 4.1 / 4.4 MB | 1.6 / 1.7 MB | 32 / 34 requests |
@@ -84,17 +80,13 @@ En no veure cap possible millora més i tenir un rendiment de quasi 100 punts o 
 
 Per tal d'evitar URL molt llargues, la URL base del projecte és: [https://tangerine-lebkuchen-d63ec2.netlify.app/](https://tangerine-lebkuchen-d63ec2.netlify.app/). A la taula s'afegeix només el nom del fitxer HTML i l'enllaç.
 
-| **Títol** | **URL** | **Temps de càrrega (mitjà)**
-**(Mòbil/PC)** | **Pes total**
-**(Mòbil/PC)** | **Pes transferit**
-**(Mòbil/PC)** | **Quantitat de recursos**
-**(Mòbil/PC)** |
+| **Títol** | **URL** | **Temps de càrrega (mitjà) (Mòbil/PC)** | **Pes total (Mòbil/PC)** | **Pes transferit (Mòbil/PC)** | **Quantitat de recursos (Mòbil/PC)** |
 | --- | --- | --- | --- | --- | --- |
 | Portada | [/index.html](https://tangerine-lebkuchen-d63ec2.netlify.app/index.html) | 3.77s / 4.46s | 483 / 549 kB | 320 / 386 kB | 8 / 8 requests |
 | Història i formació | [/historia.html](https://tangerine-lebkuchen-d63ec2.netlify.app/historia.html) | 3.88s / 4.08s | 494 / 535 kB | 325 / 335 kB | 11 / 13 requests |
 | Volcans i llocs d'interès | [/volcans.html](https://tangerine-lebkuchen-d63ec2.netlify.app/volcans.html) | 5.94s / 6.06s | 664 / 666 kB | 500 / 502 kB | 12 / 12 requests |
 | Volcà Santa Margarida | [/sta-margarida.html](https://tangerine-lebkuchen-d63ec2.netlify.app/sta-margarida.html) | 4.76s / 5.91s | 567 / 714 kB | 396 / 508 kB | 13 / 15 requests |
-| Castellfollit de la Roca | [/castellfollit.html](https://tangerine-lebkuchen-d63ec2.netlify.app/castellfollit.html) | 5.67s / 6.98s | 667 / 809 kB | 497 / 632 kB | 13 / 15 requests |
+| Castellfollit de la Roca | [/castellfollit.html](https://tangerine-lebkuchen-d63ec2.netlify.app/castellfollit.html) | 5.67s / 6.98s | 667 / 809 kB | 497 / 632 kB | 13 / 15 requests 
 | Enllaços | [/links.html](https://tangerine-lebkuchen-d63ec2.netlify.app/links.html) | 4.01s / 3.98s | 465 / 465 kB | 295 / 295 kB | 7 / 7 requests |
 
 Aquests són els resultats obtinguts després d'aplicar tots els canvis. Com es pot observar, la millora és substancial, sobretot en les pàgines amb més contingut multimèdia, on la majoria han reduït el temps per tres, passant d'uns quinze segons a només cinc segons. A més a més de reduir moltíssim el nombre de de dades transferides. Abans hi havia algunes pàgines que necessitaven 4 MB per carregar-se, i ara la més alta té 809 kB.
