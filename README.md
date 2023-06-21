@@ -76,7 +76,7 @@ Per la resta, tots els punts estan solucionats. En alguna pàgina encara marca q
 En no veure cap possible millora més i tenir un rendiment de quasi 100 punts o fins i tot 100 en alguns casos, es creu que el CSS ja és suficientment ràpid i eficient.
 
 
-1. **TAULA VEOLICITATS DE CÀRREGA final**
+5. **TAULA VEOLICITATS DE CÀRREGA FINAL**
 
 Per tal d'evitar URL molt llargues, la URL base del projecte és: [https://tangerine-lebkuchen-d63ec2.netlify.app/](https://tangerine-lebkuchen-d63ec2.netlify.app/). A la taula s'afegeix només el nom del fitxer HTML i l'enllaç.
 
