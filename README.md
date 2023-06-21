@@ -1,154 +1,106 @@
-Eines HTML i CSS -- PAC 1 -- Documentació - Fet per Oriol Esquena (oesquena@uoc.edu)
+Eines HTML i CSS -- PAC 3 – 25/06/2022 -- Documentació - Fet per Oriol Esquena (oesquena@uoc.edu)
 
-## ENLLAÇOS REPOSITORI I PUBLICACIÓ
+**ENLLAÇOS REPOSITORI I PUBLICACIÓ**
 
-El codi s'ha publicat a GitHub, al següent enllaç:
-<https://github.com/oriolesquena/eines-html-i-css-pac1>
+El codi s'ha publicat a GitHub, al següent enllaç: [https://github.com/oriolesquena/eines-html-i-css-pac3](https://github.com/oriolesquena/eines-html-i-css-pac3)
 
-La publicació s'ha fet amb Netlify i s'ha publicat en el següent enllaç:
-<https://lustrous-eclair-11fd16.netlify.app/index.html>
+La publicació s'ha fet amb Netlify i s'ha publicat en el següent enllaç: [https://tangerine-lebkuchen-d63ec2.netlify.app/index.html](https://tangerine-lebkuchen-d63ec2.netlify.app/index.html)
 
-## PROCÉS DE DESENVOLUPAMENT
+1. **TAULA VEOLICITATS DE CÀRREGA**
 
-### Creació del boilerplate
+Per tal d'evitar URL molt llargues, la URL base del projecte és: [https://dainty-licorice-850b4d.netlify.app/](https://dainty-licorice-850b4d.netlify.app/). A la taula s'afegeix només el nom del fitxer HTML i l'enllaç.
 
-Els primers passos per poder iniciar la pràctica han estat la creació
-d\'un *boilerplate* basat en *Parcel* amb els requisits indicats en el
-mòdul 2. Els passos per fer-ho han estat els següents:
+| **Títol** | **URL** | **Temps de càrrega (mitjà)**
+**(Mòbil/PC)** | **Pes total**
+**(Mòbil/PC)** | **Pes transferit**
+**(Mòbil/PC)** | **Quantitat de recursos**
+**(Mòbil/PC)** |
+| --- | --- | --- | --- | --- | --- |
+| Portada | [/index.html](https://dainty-licorice-850b4d.netlify.app/index.html) | 6.23s / 7.71s | 680 / 863 kB | 514 / 696 kB | 12 / 12 requests |
+| Història i formació | [/historia.html](https://dainty-licorice-850b4d.netlify.app/historia.html) | 11.88s / 12.96s | 4.1 / 4.4 MB | 1.6 / 1.7 MB | 32 / 34 requests |
+| Volcans i llocs d'interès | [/volcans.html](https://dainty-licorice-850b4d.netlify.app/volcans.html) | 7.22s / 7.50s | 817 / 830 kB | 650 / 664 kB | 15 / 15 requests |
+| Volcà Santa Margarida | [/sta-margarida.html](https://dainty-licorice-850b4d.netlify.app/sta-margarida.html) | 12.42s / 15.19s | 4.2 / 4.9 MB | 1.7 / 2.2 MB | 33 / 36 requests |
+| Castellfollit de la Roca | [/castellfollit.html](https://dainty-licorice-850b4d.netlify.app/castellfollit.html) | 12.44s / 16.24s | 4.3 / 5.2 MB | 1.8 / 2.5 MB | 33 / 36 requests |
+| Enllaços | [/links.html](https://dainty-licorice-850b4d.netlify.app/links.html) | 5.28s / 5.69s | 611 /628 kB | 441 / 458 kB | 10 / 10 requests |
 
--   Crear un arxiu package.json executant la comanda: npm init --yes
+Aquests són els resultats obtinguts abans de començar a aplicar canvis. S'ha observat que les pàgines on hi ha inserit un vídeo de YouTube, tenen un pes total molt elevat i per tant també un temps de càrrega força elevat. Sobretot perquè l'script de YouTube _base.js_ té molt de pes i ell sol ja triga uns 10 segons a carregar.
 
--   Instal·lar *Parcel* amb la comanda: npm install \--save-dev parcel
+Un altre factor que s'ha observat és que la memòria cau hi fa molt, ja que moltes coses com la font utilitzada o dependències externes com FontAwesome, treuen una bona part del temps de càrrega, ja que s'han de connectar a un servidor extern que les emmagatzema i descarregar-se. En canvi si es carreguen quan s'accedeix a la primera pàgina, ja estan llestes per les següents pàgines i estalviaran força temps de càrrega.
 
--   Instal·lar RimRaf amb la comanda: npm install \--save-dev rimraf
-    npm-run-all
+2. **RESPON LES PREGUNTES**
 
--   Modificar les línies de start i build del fitxer package.json amb el
-    codi:
+1. **Quins canvis detectes en les eines per a desenvolupadors en aplicar** _ **lazy loading** _ **a les imatges del teu web? Com creus que afecta la performance de la teva pàgina?**
 
-    -   \"start\": \"npm-run-all clean parcel:dev\",
+El canvi principal es nota en pàgines on hi ha imatges més avall, es carrega la part visible de la pàgina més ràpidament ja que no ha de carregar també al mateix moment les imatges de més avall, i de seguida guanya un o dos segons de temps de càrrega si hi ha vàries imatges més avall.
 
-    -   \"build\": \"npm-run-all clean parcel:build\"
+2. **Què passa en aplicar càrrega asíncrona als scripts de la teva pàgina? Quins problemes creus que pot haver-hi si carregues asíncronament el JavaScript?**
 
--   Afegir la línia: \"browserslist\": \"\> 0.5%, last 2 versions, not
-    dead\" per tal de donar compatibilitat al lloc web compilat.
+En no tenir scripts a la pàgina no s'ha pogut comprovar, però buscant informació si que s'observa doncs que el que passa és que el fil de càrrega de la pàgina no s'atura i segueix mentre carrega l'script. Evitant d'aquesta manera que la càrrega total de la pàgina depengui de l'script.
 
-Totes aquestes comandes d'instal·lació, afegeixen línies al package.json
-i fitxers a la carpeta node_modules. D'aquesta forma, si es vol editar
-el projecte des d'un altre ordinador, només cal fer un npm install per
-tenir-ho tot en ordre, ja que llavors s'instal·la tot el que
-s'especifica en el fitxer package.json.
+Un dels problemes que sembla que es podria donar és el fet que carregui la pàgina però encara no carregui el JavaScript i això faci que tot i que l'usuari percebi la pàgina com a carregada, aquesta no tingui alguna funcionalitat bàsica, cosa que pot afectar a l'experiència de l'usuari.
 
-Un cop seguits aquests passos, amb un primer codi d'HTML i CSS molt
-senzill, s'ha fet la prova d'executar la comanda: npm run build, per
-veure si compilava sense errors, i així ha estat.
+3. **No hem fet càrrega asíncrona d'estils. Creus que es podria fer? Quins problemes podríem tindre? Raona la resposta.**
 
-A partir d'aquí, s'ha executat la comanda: npm run start, que permet
-compilar i veure el projecte en un entorn local (http://localhost:1234)
-i accedir-hi així també des d'altres dispositius que estiguin en la
-mateixa xarxa Wi-Fi. Fet que permet ja treballar correctament en el
-desenvolupament del projecte.
+Segurament es podria fer, però només tindria sentit si els estils estiguessin separats en diferents fulls d'estil, de manera que per la pàgina que es demana només carregués aquell estil d'aquella pàgina. Ara bé, això seria poc recomanable ja que s'intenta que el fitxer CSS final un cop fet el _build_ sigui únic. Deixant de banda que habitualment tampoc suposa una càrrega molt gran. En les pàgines del projecte per exemple triga un segon a carregar, així que tampoc seria la millora que obtindríem, potser reduint només unes dècimes de segon la càrrega.
 
-S'ha de dir que en aquest punt, la comanda npm run start, no em
-funcionava correctament si ho feia des del terminal de Linux (WSL), en
-canvi des del de Windows (Powershell), no donava cap problema.
+3. **INFORME PRIMERA ITERACIÓ**
 
-També cal tenir en compte que de bones a primeres no podia accedir a
-http://localhost:1234 des d'altres dispositius. Però s'ha solucionat
-desactivant el tallafocs de Windows en els moments en què s'ha
-necessitat accedir-hi.
 
-### Creació del repositori
+En general a nivell de PC totes tenen una bona puntuació (90-100). És a nivell mòbil on sorgeixen els problemes(40-80). Principalment totes donen l'error de que el fitxer CSS bloqueja la renderització i això fa que la primera pintada de contingut trigui uns tres segons.
 
-Un cop creat el *boilerplate* amb el nom eines-html-i-css-pac1. A
-continuació, seguint les instruccions de GitHub de [com afegir un codi
-guardat en local a un repositori
-personal](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github#adding-a-project-to-github-without-github-cli)
-s'ha creat un repositori nou al GitHub personal, s'ha creat una branca
-master del codi guardat en local a la carpeta eines-html-i-css-pac1,
-s'ha fet un git add i un git commit, s'ha afegit la URL per el
-repositori remot (git remote add origin \<REMOTE_URL\>) i finalment s'ha
-fet un git push origin main.
+Per altra banda, les pàgines que tenen en el seu contingut un vídeo inserit de YouTube, donen encara més error, pel fet que la inserció del vídeo crea la necessitat de carregar uns scripts que triguen força a carregar i bloquegen també la renderització.
 
-D'aquesta manera ja es té el repositori local connectat al GitHub i cada
-vegada que es facin canvis i es vulgui guardar, fent un push, ja quedarà
-guardat al GitHub.
+Per tant, com a propostes de millora, es planteja intentar reduir la càrrega del fitxer CSS, i també intentar evitar la càrrega innecessària dels scripts que genera l'inserit de YouTube.
 
-### Instal·lació de dependències
+S'ha començat amb la inserció del vídeo de YouTube. Després d'investigar sobre el tema, s'ha observat que és quelcom recurrent i que és inevitable la càrrega dels scripts, ja que és un script de tercers i per tant no es pot modificar ni evitar la seva càrrega. Així que la solució per la qual s'ha optat, ha estat instal·lar una dependència anomenada [Lite YouTube Embed](https://github.com/paulirish/lite-youtube-embed/tree/master) que permet evitar aquesta càrrega dels scripts en la primera càrrega de la pàgina.
 
-Abans de començar a desenvolupar el codi, també s'ha aprofitat per
-instal·lar una nova dependència al projecte, la FontAwesome. Per fer-ho
-s'executa la comanda npm install \--save \@fortawesome/fontawesome-free.
-Aleshores s'instal·la la dependència a la carpeta node_modules i
-s'afegeix com a dependència al fitxer package.json.
+El que fa aquesta dependència és que permet que allà on aniria el vídeo, es carregui només la imatge en miniatura del vídeo i la icona de _play_, de forma que per l'usuari sembli que allà hi ha el vídeo inserit. Però en realitat, no és fins que es fa clic al vídeo que aquest carrega l'script necessari per reproduir-lo.
 
-### Compilació per la producció
+Després d'aplicar aquesta millora, els temps de càrrega de les pàgines que contenien vídeo han reduït uns 5 segons, fet molt positiu, i que també s'ha vist repercutit en l'anàlisi de PageSpeed Insights, on les pàgines amb vídeos han pujat fins a resultats del 80-85 de rendiment.
 
-Per tal que el projecte web sigui visible per tothom i no només des de
-l'entorn de desenvolupament local, s'ha penjat en un servidor web.
+A continuació, s'ha anat per l'altre problema, que afectava a totes les pàgines i que l'informe marcava que era la càrrega del CSS.
 
-Per fer-ho, s'ha creat un compte al proveïdor de servidors Netlify i a
-continuació s'ha vinculat aquest compte amb el repositori de GitHub. A
-continuació, s'ha determinat la comanda de *build*: npm run build, i la
-carpeta destí: dist. Fet això, s'ha fet un "*Deploy"* i s'ha activat el
-"*Continuous Deployment"* de forma que cada vegada que es fa un push a
-la branca enllaçada del GitHub, Netlify fa un *"Deploy"* automàticament.
+El problema però és que el CSS no es podia separar en diferents fitxers ni tampoc és que realment tingués una mida rellevant, de fet pesa 23 kB. Aleshores, després d'investigar una mica més en el tema, s'ha vist que aquests errors de càrrega que s'atribueixen al CSS a vegades poden ser deguts a temes d'optimització de la càrrega de fonts i similars (com FontAwesome).
 
-D'aquesta manera ens assegurem que sempre tenim publicada la última
-versió del codi del projecte web.
+I això s'ha corroborat analitzant els temps de càrrega i veient que realment, just després de carregar el CSS, el que portava més temps era carregar les fonts i sobretot les FontAwesome.
 
-## DISSENY I DESENVOLUPAMENT
+Per solucionar el problema, en el cas de les FontAwesome, s'ha optat per inserir el codi SVG d'aquestes directament, de forma que no cal esperar a la càrrega de cada icona, si no que la renderitza el navegador a partir del SVG. Això ha fet desaparèixer pràcticament el temps de càrrega de les FontAwesome i ja s'ha guanyat força temps.
 
-Per tal de dissenyar i desenvolupar el projecte, el primer ha estat
-escollir un lloc d'interès de la meva localitat, per poder plantejar què
-es volia posar a la web i com. Un cop escollit, s'ha desenvolupat la
-idea i la distribució de la informació, i s'ha començat a escriure el
-codi HTML per tal de definir l'esquelet de la pàgina. La informació que
-hi apareix s'ha extret principalment de la
-[Viquipèdia](https://ca.wikipedia.org/wiki/Parc_Natural_de_la_Zona_Volc%C3%A0nica_de_la_Garrotxa)
-i de la pàgina de [Turisme
-Garrotxa](https://ca.turismegarrotxa.com/territori-i-natura/parc-natural-i-espais-protegits/parc-natural-de-la-zona-volcanica-de-la-garrotxa/).
+Faltava encara però les fonts. Per a aquest tema, per tal d'evitar la càrrega de les fonts des de Google Fonts, s'ha optat per descarregar-les, convertir-les al format _.woff2_, guardar-les al projecte i inserir-les al CSS amb _@font-face_. També inserint només els fitxers necessaris, és a dir, la font regular i la negreta, que són les que s'utilitzen principalment. Això ha provocat també una millora important en la càrrega del fitxer CSS, ja que la connexió a Google Fonts alentia aquesta càrrega. Finalment, després d'aquestes millores s'han tornat a passar els tests de PageSpeed Insights i s'han obtingut els resultats que es veuen en el següent punt.
 
-L'estructura que segueix la pàgina és tenir una pàgina d'inici o portada
-amb una imatge i una breu explicació general de la pàgina.
+4. **INFORME SEGONA ITERACIÓ**
 
-Després tenim una pàgina de presentació i més explicació del parc, amb
-la seva història i formació.
+En aquesta segona iteració, podem veure que les millores aplicades després de la primera, realment han tingut efecte i el rendiment ronda els 100 punts en quasi totes les pàgines. Les poques on no ronda el 100, n'hi ha dues, la de Santa Margarida i Castellfollit, que marca que és degut a que no s'ha especificat una _width_ i _height_ a l'element \<img\>, per tal de guardar aquest espai per la imatge. El problema és que en aquest cas, la imatge té una gestió de la direcció d'art, que complica poder guardar aquest espai, ja que les mides són diferents en funció de la resolució.
 
-També trobem una pàgina que conté una llista de llocs d'interès, que
-s'avindria amb la pàgina de categoria que es demana per la pràctica.
-Dins d'aquesta, trobem dues pàgines detall amb informació més específica
-sobre cadascun d'aquests llocs d'interès (se n'han creat dues com a
-exemple, els últims tres llocs de la llista no tenen pàgina ja que no
-aporta res a nivell de novetat en l'HTML i/o el CSS).
 
-I finalment tenim la pàgina d'enllaços, que conté els links de les
-diferents fonts d'informació, d'imatge i de vídeo utilitzades pel
-desenvolupament del projecte.
+Després d'investigar sobre el tema s'ha vist que no hi ha gaires possibles solucions ni millores en aquest aspecte, i com que tampoc afecta molt a la càrrega ja que ara mateix ja va força ràpid, no caldria aplicar cap canvi, ja que només es dona en dues imatges de tota la pàgina.
 
-Un cop amb la base de l'HTML creada, s'ha anat donant forma a l'estil
-amb CSS. S'ha enfocat amb l'estil *mobile first* ja que és el que es
-recomanava a l'assignatura anterior d'HTML i CSS. També, abans de
-començar a escriure el codi de CSS, es va decidir una paleta de colors i
-un estil a seguir, que combinen amb els colors de terra i natura que
-envolten el Parc Natural de la Zona Volcànica de la Garrotxa (tema
-escollit pel projecte).
+Per la resta, tots els punts estan solucionats. En alguna pàgina encara marca que el CSS bloca la renderització, però només uns 300ms.
 
-Al principi d'escriure l'HTML ja s'havien anat definint classes pensades
-pels estils CSS. Tot i així, durant l'escriptura de codi del CSS s'han
-hagut de canviar i ajustar algunes classes per tal de que el codi fos
-més eficient i fidel a la guia.
+En no veure cap possible millora més i tenir un rendiment de quasi 100 punts o fins i tot 100 en alguns casos, es creu que el CSS ja és suficientment ràpid i eficient.
 
-De cares a la *responsiveness* de la pàgina, com s'ha partit del disseny
-*mobile first* s'ha intentat ja que moltes coses fossin adaptables a
-totes les mides de pantalla i dispositius. Pel que no podia ser així
-però, s'han definit unes *media queries* per tal de redefinir l'estil en
-dispositius com tablets i també per ordinadors (pantalles més grans en
-general). Fent un bon planteig de *responsiveness* però, s'ha pogut
-estalviar força codi en les *media queries* quedant només allò que és
-essencialment diferent en diferents dispositius.
 
-Tot el codi CSS està comentat per tal de facilitar l'entesa d'aquest.
-Els punts més obvis, com per exemple el color del text o els marges no
-estan comentats, ja que se suposa que qualsevol que entengui una mica de
-CSS comprèn què significa.
+1. **TAULA VEOLICITATS DE CÀRREGA final**
+
+Per tal d'evitar URL molt llargues, la URL base del projecte és: [https://tangerine-lebkuchen-d63ec2.netlify.app/](https://tangerine-lebkuchen-d63ec2.netlify.app/). A la taula s'afegeix només el nom del fitxer HTML i l'enllaç.
+
+| **Títol** | **URL** | **Temps de càrrega (mitjà)**
+**(Mòbil/PC)** | **Pes total**
+**(Mòbil/PC)** | **Pes transferit**
+**(Mòbil/PC)** | **Quantitat de recursos**
+**(Mòbil/PC)** |
+| --- | --- | --- | --- | --- | --- |
+| Portada | [/index.html](https://tangerine-lebkuchen-d63ec2.netlify.app/index.html) | 3.77s / 4.46s | 483 / 549 kB | 320 / 386 kB | 8 / 8 requests |
+| Història i formació | [/historia.html](https://tangerine-lebkuchen-d63ec2.netlify.app/historia.html) | 3.88s / 4.08s | 494 / 535 kB | 325 / 335 kB | 11 / 13 requests |
+| Volcans i llocs d'interès | [/volcans.html](https://tangerine-lebkuchen-d63ec2.netlify.app/volcans.html) | 5.94s / 6.06s | 664 / 666 kB | 500 / 502 kB | 12 / 12 requests |
+| Volcà Santa Margarida | [/sta-margarida.html](https://tangerine-lebkuchen-d63ec2.netlify.app/sta-margarida.html) | 4.76s / 5.91s | 567 / 714 kB | 396 / 508 kB | 13 / 15 requests |
+| Castellfollit de la Roca | [/castellfollit.html](https://tangerine-lebkuchen-d63ec2.netlify.app/castellfollit.html) | 5.67s / 6.98s | 667 / 809 kB | 497 / 632 kB | 13 / 15 requests |
+| Enllaços | [/links.html](https://tangerine-lebkuchen-d63ec2.netlify.app/links.html) | 4.01s / 3.98s | 465 / 465 kB | 295 / 295 kB | 7 / 7 requests |
+
+Aquests són els resultats obtinguts després d'aplicar tots els canvis. Com es pot observar, la millora és substancial, sobretot en les pàgines amb més contingut multimèdia, on la majoria han reduït el temps per tres, passant d'uns quinze segons a només cinc segons. A més a més de reduir moltíssim el nombre de de dades transferides. Abans hi havia algunes pàgines que necessitaven 4 MB per carregar-se, i ara la més alta té 809 kB.
+
+També el nombre de peticions s'ha vist considerablement reduït, en evitar les càrregues de YouTube i de FontAwesome.
+
+En general doncs es podria concloure que les modificacions aplicades han estat un èxit, ja que tant la reducció en temps de càrrega com els informes del PageSpeed Insights mostren una clara millora, sense haver de prescindir de cap dels continguts o dissenys de la pàgina, la qual es veu igual que abans de realitzar cap dels canvis.
+
+Per tant doncs, la valoració final és positiva, i es creu que seria una web molt eficient i apta per a usuaris amb connexions lentes o tarifes de dades limitades.
